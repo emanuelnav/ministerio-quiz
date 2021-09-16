@@ -14,6 +14,7 @@
           py-4
           bg-blue-light
           text-blue-DEFAULT text-lg
+          hover:bg-gray-200
           font-bold
           tracking-wide
           rounded-full

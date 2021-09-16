@@ -57,6 +57,7 @@
               py-4
               bg-blue-DEFAULT
               text-blue-light text-sm
+              hover:bg-blue-dark
               font-bold
               tracking-wide
               rounded-full
@@ -75,6 +76,7 @@
               py-4
               bg-blue-DEFAULT
               text-blue-light text-sm
+              hover:bg-blue-dark
               font-bold
               tracking-wide
               rounded-full
@@ -120,6 +122,7 @@
               py-4
               bg-blue-DEFAULT
               text-blue-light text-sm
+              hover:bg-blue-dark
               font-bold
               tracking-wide
               rounded-full
