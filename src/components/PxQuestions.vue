@@ -86,10 +86,29 @@
           </button>
         </div>
       </div>
-      <div v-else>
-        <h2 class="text-center">{{ textResult[countAnswersCorrect] }}</h2>
-        <img class="result-img" src="../assets/clown.jpg" alt="Image" />
-        <span>{{ countAnswersCorrect }}</span>
+      <div v-else class="flex flex-col justify-center items-center">
+        <h2 class="text-center text-4xl font-bold text-blue-dark">
+          {{ textResult[countAnswersCorrect] }}
+        </h2>
+        <img
+          class="result-img"
+          v-bind:src="imagesResult[countAnswersCorrect]"
+          alt="Image"
+        />
+        <span
+          class="
+            rounded-full
+            h-20
+            w-20
+            flex
+            items-center
+            justify-center
+            bg-blue-dark
+            text-blue-DEFAULT text-4xl
+            font-bold
+          "
+          >{{ countAnswersCorrect }}</span
+        >
         <div class="mt-6 flow-root">
           <button
             class="
@@ -128,6 +147,14 @@ export default {
         "WOW!",
         "WOW!",
         "Nivel Expert@!",
+      ],
+      imagesResult: [
+        "../assets/clown.jpg",
+        "../assets/arrow.png",
+        "../assets/arrow.png",
+        "../assets/applause.gif",
+        "../assets/applause.gif",
+        "../assets/perfect.png",
       ],
       questions: [
         {
