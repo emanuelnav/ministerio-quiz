@@ -235,6 +235,7 @@ export default {
       this.index = 0;
       this.selectAnswer = "";
       this.countAnswersCorrect = 0;
+      this.$emit("change-state");
     },
   },
 };
