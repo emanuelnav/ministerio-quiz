@@ -91,7 +91,7 @@
           {{ results[countAnswersCorrect].text }}
         </h2>
         <img
-          class="result-img"
+          class="result-img animate__animated animate__zoomIn"
           :src="results[countAnswersCorrect].image"
           :alt="results[countAnswersCorrect].name"
         />
@@ -135,6 +135,11 @@
 </template>
 
 <script>
+let noHits = new Audio(require("../assets/audio/nohits.mp3"));
+let oneHit = new Audio(require("../assets/audio/onehit.mp3"));
+let threeHits = new Audio(require("../assets/audio/threehits.mp3"));
+let allHits = new Audio(require("../assets/audio/allhits.mp3"));
+
 export default {
   name: "PxQuestions",
   data() {
@@ -143,9 +148,12 @@ export default {
       index: 0,
       count: 5,
       countAnswersCorrect: 0,
+      failSound: new Audio(require("../assets/audio/fail.mp3")),
+      successSound: new Audio(require("../assets/audio/success.mp3")),
+      soundEffects: [noHits, oneHit, oneHit, threeHits, threeHits, allHits],
       results: [
         {
-          name: "0 acrietos",
+          name: "0 aciertos",
           image: "https://i.imgur.com/6rYD9i4.jpg",
           text: "AUCH!",
         },
@@ -221,7 +229,10 @@ export default {
     answered(e) {
       this.selectAnswer = e.target.value;
       if (this.selectAnswer == this.questions[this.index].correctAnswer) {
+        this.successSound.play();
         this.countAnswersCorrect++;
+      } else {
+        this.failSound.play();
       }
     },
     nextQuestion() {
@@ -230,8 +241,11 @@ export default {
     },
     showResults() {
       this.index++;
+      this.soundEffects[this.countAnswersCorrect].play();
     },
     restartQuiz() {
+      this.soundEffects[this.countAnswersCorrect].pause();
+      this.soundEffects[this.countAnswersCorrect].currentTime = 0;
       this.index = 0;
       this.selectAnswer = "";
       this.countAnswersCorrect = 0;

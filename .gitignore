@@ -22,7 +22,7 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# Images
-
+# Assets
 src/assets/img
+src/assets/audio
 

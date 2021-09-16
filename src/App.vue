@@ -1,9 +1,17 @@
 <template>
-  <main>
-    <div v-if="mainScreen">
+  <main class="bg-blue-light">
+    <div v-if="mainScreen" class="bg-blue-DEFAULT">
       <px-main @change-state="updateState"></px-main>
     </div>
-    <div v-else class="flex flex-grow h-screen bg-blue-light">
+    <div
+      v-else
+      class="
+        flex flex-grow
+        h-screen
+        bg-blue-light
+        animate__animated animate__fadeIn
+      "
+    >
       <px-animations-left></px-animations-left>
       <px-questions @change-state="updateState"></px-questions>
       <px-animations-right></px-animations-right>
