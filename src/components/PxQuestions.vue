@@ -1,11 +1,22 @@
 <template>
-  <section class="flex flex-col flex-grow w-full h-full justify-center items-center">
-    <span v-show="index < count">{{ index + 1 }} / {{ count }}</span>
+  <section
+    class="flex flex-col flex-grow w-full h-full justify-center items-center"
+  >
+    <span class="font-bold text-lg" v-show="index < count">
+      {{ index + 1 }} / {{ count }}
+    </span>
     <div class="p-12 max-w-3xl mt-8 flex justify-center">
       <div v-if="index < count">
-        <h3 class="text-2xl font-bold text-blue-dark text-center">
-          {{ questions[index].question }}
-        </h3>
+        <div class="flex justify-center items-center">
+          <img
+            class="self-start arrow-img"
+            src="../assets/arrow.png"
+            alt="Flecha"
+          />
+          <h3 class="text-2xl font-bold text-blue-dark text-center">
+            {{ questions[index].question }}
+          </h3>
+        </div>
         <label
           :for="key"
           class="
@@ -15,7 +26,7 @@
             rounded-full
             py-2
             px-6
-            text-lg text-blue-DEFAULT
+            text-2xl
             font-bold
             text-center
           "
@@ -23,8 +34,8 @@
           :key="answer"
           :class="{
             'hover:bg-gray-200 cursor-pointer': selectAnswer == '',
-            'bg-red-500': selectAnswer == key,
-            'bg-green-500':
+            'bg-red-500 text-white': selectAnswer == key,
+            'bg-green-500 text-white':
               key == questions[index].correctAnswer && selectAnswer != '',
           }"
         >
@@ -42,8 +53,8 @@
           <button
             class="
               float-right
-              px-5
-              py-2
+              px-6
+              py-4
               bg-blue-DEFAULT
               text-blue-light text-sm
               font-bold
@@ -60,8 +71,8 @@
           <button
             class="
               float-right
-              px-5
-              py-2
+              px-6
+              py-4
               bg-blue-DEFAULT
               text-blue-light text-sm
               font-bold
@@ -76,14 +87,15 @@
         </div>
       </div>
       <div v-else>
-        <h2 class="text-center">Resultados</h2>
+        <h2 class="text-center">{{ textResult[countAnswersCorrect] }}</h2>
+        <img class="result-img" src="../assets/clown.jpg" alt="Image" />
         <span>{{ countAnswersCorrect }}</span>
         <div class="mt-6 flow-root">
           <button
             class="
               float-right
-              px-5
-              py-2
+              px-6
+              py-4
               bg-blue-DEFAULT
               text-blue-light text-sm
               font-bold
@@ -92,7 +104,7 @@
             "
             @click="restartQuiz"
           >
-            Reintentar
+            Volver al Inicio
           </button>
         </div>
       </div>
@@ -109,6 +121,14 @@ export default {
       index: 0,
       count: 5,
       countAnswersCorrect: 0,
+      textResult: [
+        "AUCH!",
+        "Probemos suerte la proxima!",
+        "Probemos suerte la proxima!",
+        "WOW!",
+        "WOW!",
+        "Nivel Expert@!",
+      ],
       questions: [
         {
           question: "¿Cuántos kilómetros de rutas construiremos en el 2021?",
@@ -173,3 +193,16 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.arrow-img {
+  width: 2rem;
+}
+
+.result-img {
+  width: 300px;
+}
+label {
+  color: #16b9ed;
+}
+</style>
