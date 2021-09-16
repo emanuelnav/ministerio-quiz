@@ -1,7 +1,7 @@
 <template>
-  <header class="shadow w-full">
+  <header class="shadow w-full flex-shrink-0">
     <nav>
-      <nav class="flex items-center justify-between flex-wrap bg-green-400 p-6">
+      <nav class="flex items-center justify-between flex-wrap bg-blue-dark p-6">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
             <span class="font-semibold text-xl tracking-tight">Ministerio de Planificación, Economía e Infraestructura</span>
         </div>

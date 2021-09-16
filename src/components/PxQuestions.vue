@@ -1,27 +1,36 @@
 <template>
-  <section class="flex w-full h-full justify-center items-center">
-    <div class="w-full max-w-xl">
-      <h1 class="font-bold text-4xl text-center text-indigo-500">Cuanto sabes?</h1>
+  <section class="flex flex-grow w-full h-full justify-center items-center">
+    <div class="w-full max-w-4xl">
       <span v-show="index < count">{{ index + 1 }} / {{ count }}</span>
-      <div class="bg-whiite p-12 rounded-lg shadow-lg w-full mt-8">
+      <div class="p-12 rounded-lg shadow-lg w-full mt-8">
         <div v-if="index < count">
-          <h3 class="text-center text-2xl font-bold">{{ questions[index].question }}</h3>
-          <label :for="key" class="block mt-4 border border-gray-300 rounded-lg py-2 px-6 text-lg" v-for="(answer, key) in questions[index].answers" :key="answer" :class="{'hover:bg-gray-200 cursor-pointer' : selectAnswer == '', 'bg-red-500' : selectAnswer == key, 'bg-green-500' : key == questions[index].correctAnswer && selectAnswer != ''}">
+          <h3 class="text-center text-2xl font-bold text-blue-dark">{{ questions[index].question }}</h3>
+          <label :for="key" 
+          class="block mt-4 border-2 border-blue-DEFAULT rounded-full py-2 px-6 text-lg text-blue-DEFAULT font-bold w-1/2" 
+          v-for="(answer, key) in questions[index].answers"
+          :key="answer"
+          :class="{'hover:bg-gray-200 cursor-pointer' : selectAnswer == '', 'bg-red-500' : selectAnswer == key, 'bg-green-500' : key == questions[index].correctAnswer && selectAnswer != ''}">
+
             <input type="radio" :id="key" class="hidden" :value="key" @change="answered($event)" :disabled="selectAnswer != ''"/>
             {{ answer }}
+
           </label>
           <div class="mt-6 flow-root">
-            <button class="float-right px-5 py-2 bg-indigo-500 text-white text-sm font-bold tracking-wide rounded-full" v-show="selectAnswer != '' && index < count-1" @click="nextQuestion">Siguiente 👉</button>
+
+            <button class="float-right px-5 py-2 bg-blue-DEFAULT text-blue-light text-sm font-bold tracking-wide rounded-full" v-show="selectAnswer != '' && index < count-1" @click="nextQuestion">Siguiente</button>
+
           </div>
           <div class="mt-6 flow-root">
-            <button class="float-right px-5 py-2 bg-indigo-500 text-white text-sm font-bold tracking-wide rounded-full" v-show="selectAnswer != '' && index == count-1" @click="showResults">Ver Resultados 😳</button>
+
+            <button class="float-right px-5 py-2 bg-blue-DEFAULT text-blue-light text-sm font-bold tracking-wide rounded-full" v-show="selectAnswer != '' && index == count-1" @click="showResults">Ver Resultados</button>
+
           </div>
         </div>
         <div v-else>
           <h2 class="text-center">Resultados</h2>
           <span>{{ countAnswersCorrect }}</span>
           <div class="mt-6 flow-root">
-            <button class="float-right px-5 py-2 bg-indigo-500 text-white text-sm font-bold tracking-wide rounded-full" @click="restartQuiz">Reintentar🤓</button>
+            <button class="float-right px-5 py-2 bg-blue-DEFAULT text-blue-light text-sm font-bold tracking-wide rounded-full" @click="restartQuiz">Reintentar</button>
           </div>
         </div>
       </div>
