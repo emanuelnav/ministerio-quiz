@@ -10,7 +10,7 @@
         <div class="flex justify-center items-center">
           <img
             class="self-start arrow-img"
-            src="../assets/arrow.png"
+            src="../assets/img/arrow.png"
             alt="Flecha"
           />
           <h3 class="text-2xl font-bold text-blue-dark text-center">
@@ -87,13 +87,13 @@
         </div>
       </div>
       <div v-else class="flex flex-col justify-center items-center">
-        <h2 class="text-center text-4xl font-bold text-blue-dark">
-          {{ textResult[countAnswersCorrect] }}
+        <h2 class="text-center text-4xl font-black text-blue-dark mb-2">
+          {{ results[countAnswersCorrect].text }}
         </h2>
         <img
           class="result-img"
-          v-bind:src="imagesResult[countAnswersCorrect]"
-          alt="Image"
+          :src="results[countAnswersCorrect].image"
+          :alt="results[countAnswersCorrect].name"
         />
         <span
           class="
@@ -106,9 +106,12 @@
             bg-blue-dark
             text-blue-DEFAULT text-4xl
             font-bold
+            mt-4
           "
-          >{{ countAnswersCorrect }}</span
         >
+          {{ countAnswersCorrect }}
+        </span>
+        <span class="text-blue-DEFAULT text-4xl font-bold">Aciertos</span>
         <div class="mt-6 flow-root">
           <button
             class="
@@ -140,21 +143,37 @@ export default {
       index: 0,
       count: 5,
       countAnswersCorrect: 0,
-      textResult: [
-        "AUCH!",
-        "Probemos suerte la proxima!",
-        "Probemos suerte la proxima!",
-        "WOW!",
-        "WOW!",
-        "Nivel Expert@!",
-      ],
-      imagesResult: [
-        "../assets/clown.jpg",
-        "../assets/arrow.png",
-        "../assets/arrow.png",
-        "../assets/applause.gif",
-        "../assets/applause.gif",
-        "../assets/perfect.png",
+      results: [
+        {
+          name: "0 acrietos",
+          image: "https://i.imgur.com/6rYD9i4.jpg",
+          text: "AUCH!",
+        },
+        {
+          name: "1 acierto",
+          image: "https://i.imgur.com/Ofihx3U.png",
+          text: "Probemos suerte la proxima!",
+        },
+        {
+          name: "2 aciertos",
+          image: "https://i.imgur.com/Ofihx3U.png",
+          text: "Probemos suerte la proxima!",
+        },
+        {
+          name: "3 aciertos",
+          image: "https://i.imgur.com/3MTiIWF.gif",
+          text: "WOW!",
+        },
+        {
+          name: "4 aciertos",
+          image: "https://i.imgur.com/3MTiIWF.gif",
+          text: "WOW!",
+        },
+        {
+          name: "5 aciertos",
+          image: "https://i.imgur.com/iePOA2D.png",
+          text: "Nivel Expert@!",
+        },
       ],
       questions: [
         {
@@ -227,7 +246,8 @@ export default {
 }
 
 .result-img {
-  width: 300px;
+  width: 400px;
+  height: 400px;
 }
 label {
   color: #16b9ed;

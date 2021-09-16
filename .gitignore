@@ -24,6 +24,5 @@ pnpm-debug.log*
 
 # Images
 
-src/assets/*.png
-src/assets/*.jpg
-src/assets/*.gif
+src/assets/img
+
