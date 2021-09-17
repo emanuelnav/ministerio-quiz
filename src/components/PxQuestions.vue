@@ -5,15 +5,15 @@
     <span class="font-bold text-lg" v-show="index < count">
       {{ index + 1 }} / {{ count }}
     </span>
-    <div class="p-12 max-w-3xl mt-8 flex justify-center">
+    <div class="p-12 max-w-3xl mt-8 flex justify-center max-h-screen">
       <div v-if="index < count">
         <div class="flex justify-center items-center">
           <img
-            class="self-start arrow-img"
+            class="self-start arrow-img hidden lg:block"
             src="../assets/img/arrow.png"
             alt="Flecha"
           />
-          <h3 class="text-2xl font-bold text-blue-dark text-center">
+          <h3 class="text-xl lg:text-2xl font-bold text-blue-dark text-center">
             {{ questions[index].question }}
           </h3>
         </div>
@@ -24,9 +24,12 @@
             mt-4
             border-2 border-blue-DEFAULT
             rounded-full
-            py-2
-            px-6
-            text-2xl
+            py-1
+            lg:py-2
+            px-2
+            lg:px-6
+            text-lg
+            lg:text-2xl
             font-bold
             text-center
           "

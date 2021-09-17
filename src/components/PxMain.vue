@@ -1,7 +1,7 @@
 <template>
-  <section class="relative w-screen h-screen md:flex md:items-center">
+  <section class="lg:relative w-screen h-screen flex items-center">
     <video
-      class="absolute left-0 lg:top-0 lg:h-screen object-cover z-1 w-screen"
+      class="lg:absolute left-0 lg:top-0 lg:h-screen object-cover z-1 w-screen"
       src="../assets/img/placainicio.mp4"
       autoplay
       muted
@@ -46,6 +46,12 @@ export default {
   .position {
     top: 20%;
     left: 40%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .position {
+    top: 20%;
+    left: 25%;
   }
 }
 </style>
