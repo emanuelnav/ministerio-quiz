@@ -13,6 +13,7 @@ An interactive quiz of how much you know about government projects.
 - Animate.css
 
 See the [Demo](https://ministerio-quiz.netlify.app/ "Demo")
+
 ![Example](https://media.giphy.com/media/bQolgMypsWdUQUcpXd/giphy.gif?cid=790b7611af0f95396946819a77f154b40fc2ad8deb23c189&rid=giphy.gif&ct=g)
 
 ## Project Setup
