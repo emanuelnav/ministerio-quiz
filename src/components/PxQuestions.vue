@@ -191,41 +191,46 @@ export default {
       ],
       questions: [
         {
-          question: "¿Cuántos kilómetros de rutas construiremos en el 2021?",
-          answers: { a: "280 km", b: "360 km", c: "140 km" },
-          correctAnswer: "b",
+          question:
+            "¿Desde enero del 2021 hasta la fecha, cuántas obras llevamos inauguradas en Sáenz Peña?",
+          answers: { a: "12", b: "14", c: "17" },
+          correctAnswer: "c",
         },
         {
           question:
-            "¿A cuántas localidades garantizará agua potable el Segundo Acueducto del Interior?",
-          answers: { a: "21", b: "26", c: "29" },
-          correctAnswer: "b",
-        },
-        {
-          question:
-            "¡Chaco reestructuró su deuda externa en dólares! ¿De cuánto será el ahorro que logrará la Provincia hasta el 2024?",
+            "Entre estas obras de infraestructura sanitaria local hay una que iniciará muy pronto. ¿Cuál es?",
           answers: {
-            a: "USD 212 millones",
-            b: "USD 180 millones",
-            c: "USD 140 millones",
+            a: "Hospital Odontológico",
+            b: "Hospital Materno Infantil",
+            c: "Hospital 4 de Junio",
           },
-          correctAnswer: "a",
-        },
-        {
-          question: "¿Cuántas cuadras pavimentaremos este año en Chaco?",
-          answers: { a: "+500", b: "+1000", c: "+800" },
           correctAnswer: "b",
         },
         {
           question:
-            "Chaco Reactiva es el plan de recuperación económica que pusimos en marcha. ¿Cuáles son sus principales objetivos?",
+            "Junto a IPDUV estamos construyendo 74 departamentos del PRO.CRE.AR. ¿Hasta cuándo está abierta la inscripción?",
           answers: {
-            a: "Fortalecimiento de la industria",
-            b: "Generación de empleo",
-            c: "Crecimiento de la infraestructura y el consumo",
-            d: "Todas son correctas",
+            a: "Todavía no comenzó",
+            b: "Ya terminó",
+            c: "Hasta el 15/11",
           },
-          correctAnswer: "d",
+          correctAnswer: "c",
+        },
+        {
+          question:
+            "Hace poco inauguramos la Residencia Estudiantil de Sáenz Peña. ¿Cuántos chicos y chicas pueden vivir allí gratis y con todas las comodidades?",
+          answers: { a: "50", b: "150", c: "200" },
+          correctAnswer: "c",
+        },
+        {
+          question:
+            "¿Sabías que el Centro de Convenciones 'Ferichaco' fue íntegramente remodelado? ¿Qué uso se le dará a este espacio?",
+          answers: {
+            a: "De interés cívico",
+            b: "Esparcimiento cultural",
+            c: "¡Ambas!",
+          },
+          correctAnswer: "c",
         },
       ],
     };

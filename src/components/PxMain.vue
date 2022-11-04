@@ -1,12 +1,12 @@
 <template>
   <section class="lg:relative w-screen h-screen flex items-center">
-    <video
+    <img
       class="lg:absolute left-0 lg:top-0 lg:h-screen object-cover z-1 w-screen"
-      src="../assets/img/placainicio.mp4"
+      src="../assets/img/portada.jpg"
       autoplay
       muted
       loop
-    ></video>
+    />
     <div class="absolute z-2 position animate__animated animate__fadeInLeft">
       <button
         class="
